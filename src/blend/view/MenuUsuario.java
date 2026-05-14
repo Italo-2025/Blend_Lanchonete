@@ -20,29 +20,36 @@ public class MenuUsuario {
             System.out.println(j);
         }
 
-        System.out.println("Qual deseja adicionar ao carrinho (ID):");
+        System.out.println("\nQual deseja adicionar ao carrinho (ID):");
         int carrinho = log.nextInt();
 
         for (Produtos j : CadastroProdutos.produtos){
             if (carrinho == j.getId()){
                 CarrinhoCliente.carrinho.add(new Carrinho(carrinho));
+
+                System.out.println("Produto adicionado com sucesso!\n");
+            }
+            else{
+                System.out.println("Produto não encontrado!");
+                break;
             }
         }
 
-        System.out.println("Produto adicionado com sucesso!\n");
+
         System.out.println("[1] - Consultar carrinho");
         System.out.println("[2] - Voltar ao mercado");
-        System.out.println("[0] - Sair");
+        System.out.println("[3] - Finalizar compra");
 
         int op = log.nextInt();
 
         switch (op){
-            case 0:
-                System.exit(0);
             case 1:
-                CarrinhoCliente.Main();
+                CarrinhoCliente.Main(log);
                 break;
             case 2:
+                MenuUsuario.Main(log);
+                break;
+            case 3:
                 break;
 
         }

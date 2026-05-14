@@ -10,6 +10,7 @@ public class MenuLoja {
         System.out.println("[2] - Listar produtos existentes");
         System.out.println("[3] - Excluir produto");
         int op = log.nextInt();
+        log.nextLine();
 
         switch (op){
             case 1:

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CadastroProdutos {
 
     public static ArrayList<Produtos> produtos = new ArrayList();
-    static int id_prod = 0;
+    static int id_prod = 1;
 
     public ArrayList<Produtos> getProdutos() {
         return produtos;
@@ -21,10 +21,10 @@ public class CadastroProdutos {
 
         System.out.println("Digite o preço do produto:");
         double preco = log.nextDouble();
+        log.nextLine();
 
         System.out.println("Informações do produto:");
         String inf = log.nextLine();
-        log.nextLine();
 
         CadastroProdutos.id_prod++;
 

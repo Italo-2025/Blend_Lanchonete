@@ -22,7 +22,7 @@ public class Carrinho {
     }
     @Override
     public String toString(){
-        return String.format("\u001B[1;34m"+"Nome\"+\"\u001B[0m\"+\": %-5s | \"+\"\u001B[1;34m\"+\"Preço\"+\"\u001B[0m\"+\":%.2f | \"+\"\u001B[1;34m\"+\"Detalhes\"+\"\u001B[0m\"+\":%-20s |",
+        return String.format("\u001B[1;34m"+"Nome"+"\u001B[0m"+": %-5s |"+"\u001B[1;34m"+"Preço"+"\u001B[0m"+":%.2f |"+"\u001B[1;34m"+"Detalhes"+"\u001B[0m"+":%-20s |",
                 nome, preco, detalhes);
         }
 }
