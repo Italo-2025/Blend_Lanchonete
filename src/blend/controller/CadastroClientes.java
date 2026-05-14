@@ -71,7 +71,7 @@ public class CadastroClientes {
 
                 MenuUsuario.Main(log);
             }
-            else{
+            if (usu != i.getId_cliente() && senha == i.getSenha()){
                 System.out.println("\u001B[31m"+"Usuario não encontrado!"+"\u001B[0m");
             }
             if (usu == i.getId_cliente() && senha != i.getSenha()) {

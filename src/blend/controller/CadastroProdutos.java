@@ -28,7 +28,7 @@ public class CadastroProdutos {
 
         CadastroProdutos.id_prod++;
 
-        produtos.add(new Produtos(nome, preco, inf, id_prod));
+        produtos.add(new Produtos(nome, preco, inf, CadastroProdutos.id_prod));
 
         System.out.println("O id do seu produto é "+CadastroProdutos.id_prod);
 
