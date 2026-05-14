@@ -21,6 +21,6 @@ public class Lojas {
         public String getEndereco() {return endereco;}
         public int getId_lojas() {return id_lojas;}
         public String getCnpj() {return cnpj;}
+        public int getSenha() {return senha; }
 
-    }
-
+        }

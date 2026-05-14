@@ -1,6 +1,7 @@
 package blend.controller;
 
 import blend.model.Clientes;
+import blend.view.MenuUsuario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class CadastroClientes {
 
     public static ArrayList<Clientes> clientes = new ArrayList<>();
-    static int id = 0;
+    static int id = 1;
 
 
     public static void Main(Scanner log) {
@@ -62,12 +63,18 @@ public class CadastroClientes {
 
         for(Clientes i : clientes) {
             if ( usu == i.getId_cliente() && senha == i.getSenha()){
+
                 System.out.println("Seja bem vindo!");
                 System.out.println("\nPRESSIONE 'ENTER' PARA CONTINUAR...");
                 log.nextLine();
                 log.nextLine();
+
+                MenuUsuario.Main(log);
             }
-            if (senha != i.getSenha()) {
+            else{
+                System.out.println("\u001B[31m"+"Usuario não encontrado!"+"\u001B[0m");
+            }
+            if (usu == i.getId_cliente() && senha != i.getSenha()) {
                 System.out.println("Senha incorreta");
                 continue;
 

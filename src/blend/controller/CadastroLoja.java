@@ -1,13 +1,15 @@
 package blend.controller;
 
 import blend.model.Lojas;
+import blend.view.MenuLoja;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastroLoja {
 
     public static ArrayList<Lojas> lojas = new ArrayList<>();
-    static int id = 999;
+    static int id = 1000;
 
 
     public static void Main(Scanner log) {
@@ -52,24 +54,25 @@ public class CadastroLoja {
 
     static void Login_loja(Scanner log){
 
+        boolean id_encontrado = false;
+
         System.out.println("ID: ");
         int id_loja = log.nextInt();
 
-        System.out.println("CNPJ (14 digitos):");
-        String cnpj = log.nextLine();
+        System.out.println("Senha: (14 digitos):");
+        int senha = log.nextInt();
         log.nextLine();
 
         for(Lojas i : lojas) {
-            if ( id_loja == i.getId_lojas() && cnpj == i.getCnpj()){
+            if (id_loja == i.getId_lojas()) {
+                id_encontrado = true;
+            }
+            if (id_encontrado) {
                 System.out.println("Seja bem vindo!");
                 System.out.println("\nPRESSIONE 'ENTER' PARA CONTINUAR...");
                 log.nextLine();
-                log.nextLine();
-            }
-            if (cnpj != i.getCnpj()) {
-                System.out.println("CNPJ incorreta");
-                continue;
 
+                MenuLoja.main(log);
             }
         }
     }

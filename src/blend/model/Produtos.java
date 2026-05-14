@@ -3,19 +3,28 @@ package blend.model;
 public class Produtos {
     String nome;
     double preco;
-    int tempo_entrega;
-    double frete;
+    String detalhes;
+    int id;
 
-    public Produtos(String nome, double preco, double frete, int tempo_entrega){
+    public Produtos(String nome, double preco, String detalhes, int id){
     this.nome = nome;
     this.preco = preco;
-    this.tempo_entrega = tempo_entrega;
-    this.frete = frete;
+    this.detalhes = detalhes;
+    this.id = id;
     }
+
+    //Getter
+    public int getId() {return id;}
 
     //Setter
     public void setNome (String nome) { this.nome = nome; };
     public void setPreco (double preco) { this.preco = preco; }
-    public void setFrete (double frete) { this.frete = frete; }
-    public void setTempo_entrega (int tempo_entrega) { this.tempo_entrega = tempo_entrega; }
+    public void setDetalhes (String detalhes) { this.detalhes = detalhes; }
+    public void setId (int id) { this.id = id; }
+
+    @Override
+    public String toString(){
+        return String.format("\u001B[1;34m"+"Nome"+"\u001B[0m"+": %-5s | "+"\u001B[1;34m"+"Preço"+"\u001B[0m"+":%.2f | "+"\u001B[1;34m"+"Detalhes"+"\u001B[0m"+":%-20s | "+"\u001B[1;34m"+"ID"+"\u001B[0m"+":%-5d",
+                nome, preco, detalhes, id);
+    }
 }
