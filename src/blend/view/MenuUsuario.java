@@ -1,5 +1,6 @@
 package blend.view;
 
+import blend.controller.CadastroClientes;
 import blend.controller.CadastroProdutos;
 import blend.model.Carrinho;
 import blend.model.Produtos;
@@ -26,6 +27,24 @@ public class MenuUsuario {
             if (carrinho == j.getId()){
                 CarrinhoCliente.carrinho.add(new Carrinho(carrinho));
             }
+        }
+
+        System.out.println("Produto adicionado com sucesso!\n");
+        System.out.println("[1] - Consultar carrinho");
+        System.out.println("[2] - Voltar ao mercado");
+        System.out.println("[0] - Sair");
+
+        int op = log.nextInt();
+
+        switch (op){
+            case 0:
+                System.exit(0);
+            case 1:
+                CarrinhoCliente.Main();
+                break;
+            case 2:
+                break;
+
         }
     }
 }

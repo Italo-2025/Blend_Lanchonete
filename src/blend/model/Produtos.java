@@ -15,6 +15,9 @@ public class Produtos {
 
     //Getter
     public int getId() {return id;}
+    public String getNome() {return nome;}
+    public double getPreco() {return preco;}
+    public String getDetalhes() {return detalhes;}
 
     //Setter
     public void setNome (String nome) { this.nome = nome; };
